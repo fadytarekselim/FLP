@@ -1,10 +1,9 @@
-public class Team implements IDisplayDataItem {
+public class Team {
     
     private String teamName;
     private Player[] playerArray;
     private int pointsTotal;
     private int goalsTotal;
-    private boolean detailAvailable = false;
     private int id = 0;
     private String detailType = "Team";
     
@@ -98,32 +97,7 @@ public class Team implements IDisplayDataItem {
     public String toString(){
         return teamName;
     }
-    
-    // Remainder is displayDetailStuff
-    
-    public String getDisplayDetail(){
-        return teamName;
-    }
-    public boolean isDetailAvailable (){
-        return detailAvailable;
-    }
-    public int getID(){
-        return id;
-    }
-    public String getDetailType() {
-        return detailType;
-    }
 
-    /**
-     * @param detailAvailable the detailAvailable to set
-     */
-    public void setDetailAvailable(boolean detailAvailable) {
-        this.detailAvailable = detailAvailable;
-    }
-
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
