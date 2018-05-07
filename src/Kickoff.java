@@ -1,4 +1,4 @@
-public class Kickoff extends GameEvent {  // Really it's a special Pass
+public class Kickoff extends TeamGameEvent {  // Really it's a special Pass
     
     public Kickoff() {
 
@@ -8,8 +8,8 @@ public class Kickoff extends GameEvent {  // Really it's a special Pass
         return "Kickoff ";
     }
     
-    public GameEvent[] getNextEvents() {
-        GameEvent theEvent[] = {new ReceivePass(), new GainPossession()};
+    public TeamGameEvent[] getNextEvents() {
+        TeamGameEvent theEvent[] = {new ReceivePass(), new GainPossession()};
         return theEvent;
     }
     

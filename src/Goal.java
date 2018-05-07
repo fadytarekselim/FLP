@@ -1,4 +1,4 @@
-public class Goal extends GameEvent {
+public class Goal extends TeamGameEvent {
     
     public Goal(){
        
@@ -7,8 +7,8 @@ public class Goal extends GameEvent {
         return "GOAL! ";
     }
      
-    public GameEvent[] getNextEvents() {
-        GameEvent theEvent[] = {new Kickoff()};
+    public TeamGameEvent[] getNextEvents() {
+        TeamGameEvent theEvent[] = {new Kickoff()};
         return theEvent;
     }
     

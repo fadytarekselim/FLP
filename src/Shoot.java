@@ -1,4 +1,4 @@
-public class Shoot extends GameEvent {
+public class Shoot extends TeamGameEvent {
     
     // At the simplest, if successful dribbling moves towards the other teams goal
     public Shoot(){
@@ -11,8 +11,8 @@ public class Shoot extends GameEvent {
         return "Shoots ";
     }
     
-    public GameEvent[] getNextEvents() {
-        GameEvent theEvent[] = { new Goal(), new Kickout()};
+    public TeamGameEvent[] getNextEvents() {
+        TeamGameEvent theEvent[] = { new Goal(), new Kickout()};
         return theEvent;
     }
     

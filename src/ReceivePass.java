@@ -1,4 +1,4 @@
-public class ReceivePass extends GameEvent {
+public class ReceivePass extends TeamGameEvent {
     
     public ReceivePass(){
         
@@ -9,8 +9,8 @@ public class ReceivePass extends GameEvent {
         return "Receive pass ";
     }
     
-    public GameEvent[] getNextEvents() {
-        GameEvent theEvent[] = { new Dribble(), new GainPossession(), new Shoot(), new Pass()};
+    public TeamGameEvent[] getNextEvents() {
+        TeamGameEvent theEvent[] = { new Dribble(), new GainPossession(), new Shoot(), new Pass()};
         return theEvent;
     }
     

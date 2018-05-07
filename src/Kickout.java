@@ -1,4 +1,4 @@
-public class Kickout extends GameEvent { // Special type of Pass
+public class Kickout extends TeamGameEvent { // Special type of Pass
     
     public Kickout(){
      
@@ -8,8 +8,8 @@ public class Kickout extends GameEvent { // Special type of Pass
         return "Saved. Kickout ";
     }
     
-    public GameEvent[] getNextEvents() {
-        GameEvent theEvent[] = {new GainPossession(), new ReceivePass()};
+    public TeamGameEvent[] getNextEvents() {
+        TeamGameEvent theEvent[] = {new GainPossession(), new ReceivePass()};
         return theEvent;
     }
     
