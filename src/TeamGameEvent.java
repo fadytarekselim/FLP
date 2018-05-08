@@ -36,12 +36,12 @@ public abstract class TeamGameEvent {
         return ballPos;
     }
     public void setBallPos(int ballPos) {
-        this.ballPos = ballPos + (Run.PITCH_LENGTH - ballPos)/8;
+        this.ballPos = ballPos + (ProjectRun.PITCH_LENGTH - ballPos)/8;
     }
     
     // Returning the ball position in the eyes of the opponent
     public void reverseBallPos(){
-        this.ballPos = Run.PITCH_LENGTH - this.ballPos;
+        this.ballPos = ProjectRun.PITCH_LENGTH - this.ballPos;
     }
 
 }

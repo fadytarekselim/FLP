@@ -1,4 +1,4 @@
-public class Run {
+public class ProjectRun {
 	// Rules of the game
 	public static final double GAME_EVENT_FREQUENCY = 0.6;
 	public static final int GAME_LENGTH = 90;
