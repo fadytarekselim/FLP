@@ -1,15 +1,31 @@
-public class Team {
-    // Declarations
+public class Team implements Comparable<Object> {
+    
     private String teamName;
     private Player[] playerArray;
     private int pointsTotal;
     private int goalsTotal;
+    private boolean detailAvailable = false;
     private int id = 0;
     private String detailType = "Team";
     
-    // Constructors
-    public Team() {
-    	
+    public int compareTo(Object theTeam){
+        int returnValue = -1;
+        if (this.getPointsTotal()< ((Team)theTeam).getPointsTotal()) {
+            returnValue = 1;
+        } else if (this.getPointsTotal() == ((Team)theTeam).getPointsTotal()){
+            if (this.getGoalsTotal()< ((Team)theTeam).getGoalsTotal()) {
+                returnValue = 1;
+            } 
+        }
+        return returnValue;
+    }
+    
+    public void incGoalsTotal(int goals){
+        this.setGoalsTotal(this.getGoalsTotal() + goals);
+    }
+
+    public void incPointsTotal(int points){
+        this.pointsTotal += points;
     }
     
     public Team(String teamName) {
@@ -20,11 +36,13 @@ public class Team {
         this(teamName);
         this.playerArray = players;
     }
+    
+    public Team() {}
 
-    // Setters & Getters
     public String getTeamName() {
         return teamName;
     }
+
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
@@ -32,6 +50,7 @@ public class Team {
     public Player[] getPlayerArray() {
         return playerArray;
     }
+
     public void setPlayerArray(Player[] playerArray) {
         this.playerArray = playerArray;
     }
@@ -39,6 +58,7 @@ public class Team {
     public int getPointsTotal() {
         return pointsTotal;
     }
+
     public void setPointsTotal(int pointsTotal) {
         this.pointsTotal = pointsTotal;
     }
@@ -46,60 +66,54 @@ public class Team {
     public int getGoalsTotal() {
         return goalsTotal;
     }
+
     public void setGoalsTotal(int goalsTotal) {
         this.goalsTotal = goalsTotal;
     }
     
+    public String toString(){
+        return teamName;
+    }
+
+    public String getDisplayDetail(){
+        return teamName;
+    }
+    public boolean isDetailAvailable (){
+        return detailAvailable;
+    }
+    public int getID(){
+        return id;
+    }
+    public String getDetailType() {
+        return detailType;
+    }
+
+    public void setDetailAvailable(boolean detailAvailable) {
+        this.detailAvailable = detailAvailable;
+    }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-    
 
     public String getGetDetailType() {
         return detailType;
     }
+
     public void setGetDetailType(String detailType) {
         this.detailType = detailType;
     }
     
-    // Methods
-    public String toString(){
-        return teamName;
-    }
-    
-    // The code below shows our implementation to the random selections of events
-    public TeamGameEvent getNextPlayAttempt(TeamGameEvent currEvent){
+    // Below code shows random selection of attempt
+    public GameEvent getNextPlayAttempt(GameEvent currEvent){
         
-        TeamGameEvent[] possEvents = currEvent.getNextEvents();
+        GameEvent[] possEvents = currEvent.getNextEvents();
         currEvent = possEvents[(int) (Math.random() * (possEvents.length))];
         
         return currEvent;
-    }
-    
-    // 1 means the method's input is the winner in our implementation
-    public int compareTo(Team theTeam){
-        int returnValue = -1;
-        
-        if (this.getPointsTotal()< theTeam.getPointsTotal()) {
-            returnValue = 1;
-        } 
-        else if (this.getPointsTotal() == theTeam.getPointsTotal()) {
-            if (this.getGoalsTotal()< theTeam.getGoalsTotal())
-                returnValue = 1;
-        }   
-        
-        return returnValue;
-    }
-    
-    // Updating Goals & Total Points
-    public void incGoalsTotal(int goals){
-        this.setGoalsTotal(this.getGoalsTotal() + goals);
-    }
-
-    public void incPointsTotal(int points){
-        this.pointsTotal += points;
     }
 }

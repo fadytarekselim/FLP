@@ -1,16 +1,13 @@
-public class ReceivePass extends TeamGameEvent {
+public class ReceivePass extends GameEvent {
     
-    public ReceivePass(){
-        
-        super();
-        
-    }    
+    public ReceivePass() {}
+    
     public String toString() {
         return "Receive pass ";
     }
     
-    public TeamGameEvent[] getNextEvents() {
-        TeamGameEvent theEvent[] = { new Dribble(), new GainPossession(), new Shoot(), new Pass()};
+    public GameEvent[] getNextEvents() {
+        GameEvent theEvent[] = { new Dribble(), new GainPossession(), new Shoot(), new Pass()};
         return theEvent;
     }
     
@@ -20,6 +17,5 @@ public class ReceivePass extends TeamGameEvent {
     
     public boolean changeTeam() {
         return false;
-    }
-    
+    }   
 }

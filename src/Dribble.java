@@ -1,18 +1,16 @@
-public class Dribble extends TeamGameEvent {
+public class Dribble extends GameEvent {
     
-    // At the simplest, if successful dribbling moves towards the other teams goal
+    // At the simplest, if it is a successful dribble, it moves towards the other teams goal
     public Dribble(){
-        
         super();
-        
     }
     
     public String toString() {
         return "Dribble ";
     }
     
-    public TeamGameEvent[] getNextEvents() {
-        TeamGameEvent theEvent[] = { new GainPossession(), new Shoot(), new Pass()};
+    public GameEvent[] getNextEvents() {
+        GameEvent theEvent[] = { new GainPossession(), new Shoot(), new Pass()};
         return theEvent;
     }
     

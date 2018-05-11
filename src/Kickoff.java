@@ -1,15 +1,12 @@
-public class Kickoff extends TeamGameEvent {  // Really it's a special Pass
-    
-    public Kickoff() {
-
-    }
+public class Kickoff extends GameEvent {    
+    public Kickoff() {}
 
     public String toString() {
         return "Kickoff ";
     }
     
-    public TeamGameEvent[] getNextEvents() {
-        TeamGameEvent theEvent[] = {new ReceivePass(), new GainPossession()};
+    public GameEvent[] getNextEvents() {
+        GameEvent theEvent[] = {new ReceivePass(), new GainPossession()};
         return theEvent;
     }
     
@@ -20,11 +17,8 @@ public class Kickoff extends TeamGameEvent {  // Really it's a special Pass
     public boolean changeTeam() {
         return true;
     }
-    
-        // Little bit of a hack maybe as ballPos not used.
+
     public void setBallPos(int ballPos) {
-       //super.setBallPos(50);
        super.ballPos = 50;
     }
-    
 }

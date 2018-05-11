@@ -1,19 +1,21 @@
-public abstract class TeamGameEvent {
-	// Abstract Methods
-	public abstract TeamGameEvent[] getNextEvents();
+public abstract class GameEvent {
+    // To be Implemented by the events
+    public abstract GameEvent[] getNextEvents();
     public abstract boolean changePlayer();
     public abstract boolean changeTeam();
     
-    // Declarations
+    // Declarations and Methods to be used by the events
     private Team theTeam;
     private Player thePlayer;
     private int theTime;
     int ballPos;
 
-    // Setters & Getters
+    public GameEvent() {}
+
     public Team getTheTeam() {
         return theTeam;
     }
+
     public void setTheTeam(Team theTeam) {
         this.theTeam = theTeam;
     }
@@ -21,6 +23,7 @@ public abstract class TeamGameEvent {
     public Player getThePlayer() {
         return thePlayer;
     }
+
     public void setThePlayer(Player thePlayer) {
         this.thePlayer = thePlayer;
     }
@@ -28,6 +31,7 @@ public abstract class TeamGameEvent {
     public int getTheTime() {
         return theTime;
     }
+
     public void setTheTime(int theTime) {
         this.theTime = theTime;
     }
@@ -35,13 +39,12 @@ public abstract class TeamGameEvent {
     public int getBallPos() {
         return ballPos;
     }
+
     public void setBallPos(int ballPos) {
         this.ballPos = ballPos + (Settings.PITCH_LENGTH - ballPos)/8;
     }
     
-    // The opponent view of the event
     public void reverseBallPos(){
         this.ballPos = Settings.PITCH_LENGTH - this.ballPos;
-    }
-
+    } 
 }

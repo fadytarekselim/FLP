@@ -1,18 +1,12 @@
-public class Shoot extends TeamGameEvent {
-    
-    // At the simplest, if successful dribbling moves towards the other teams goal
-    public Shoot(){
-        
-        // No change in ballPoss until next event; Goal or Kickout(save)
-        
-    }
+public class Shoot extends GameEvent {
+    public Shoot() {}
     
     public String toString() {
         return "Shoots ";
     }
     
-    public TeamGameEvent[] getNextEvents() {
-        TeamGameEvent theEvent[] = { new Goal(), new Kickout()};
+    public GameEvent[] getNextEvents() {
+        GameEvent theEvent[] = { new Goal(), new Kickout()};
         return theEvent;
     }
     
@@ -23,14 +17,8 @@ public class Shoot extends TeamGameEvent {
     public boolean changeTeam() {
         return false;
     }
-    
-        /**
-     * @param ballPos the ballPos to set
-     */
-    public void setBallPos(int currBallPos) {
-        //super.setBallPos(currBallPos);
-        super.ballPos = currBallPos;
 
+    public void setBallPos(int currBallPos) {
+        super.ballPos = currBallPos;
     }
-    
 }

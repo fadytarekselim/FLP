@@ -1,14 +1,13 @@
-public class Goal extends TeamGameEvent {
+public class Goal extends GameEvent {
     
-    public Goal(){
-       
-    }
+    public Goal() {}
+
     public String toString() {
         return "GOAL! ";
     }
      
-    public TeamGameEvent[] getNextEvents() {
-        TeamGameEvent theEvent[] = {new Kickoff()};
+    public GameEvent[] getNextEvents() {
+        GameEvent theEvent[] = {new Kickoff()};
         return theEvent;
     }
     
@@ -19,12 +18,8 @@ public class Goal extends TeamGameEvent {
     public boolean changeTeam() {
         return false;
     }
-    
-    
-    // Little bit of a hack maybe as ballPos not used.
+
     public void setBallPos(int ballPos) {
-       //super.setBallPos(100);
         super.ballPos = 100;
-    }
-     
+    }    
 }

@@ -1,17 +1,15 @@
-public class GainPossession extends TeamGameEvent {
+public class GainPossession extends GameEvent {
     
-    public GainPossession(){
-        
+    public GainPossession(){       
         super();
-        
     }
     
     public String toString() {
         return "Won possession ";
     }
     
-    public TeamGameEvent[] getNextEvents() {
-        TeamGameEvent theEvent[] = { new GainPossession(), new Pass(), new Dribble(), new Shoot()};
+    public GameEvent[] getNextEvents() {
+        GameEvent theEvent[] = { new GainPossession(), new Pass(), new Dribble(), new Shoot()};
         return theEvent;
     }
     

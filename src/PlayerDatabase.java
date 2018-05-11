@@ -1,8 +1,6 @@
 import java.util.*;
 public class PlayerDatabase {
-    // Declarations
-    private ArrayList <Player> players;
-    String playersList = 
+	String playersList = 
     		"Ahmed Hassan," + 
     		"Asensio," +
     		"Busquets," +
@@ -12,13 +10,14 @@ public class PlayerDatabase {
     		"Daryl York," +      
     		"Dida," +
     		"Emeric Abrignani," +
-    		"Elba Elma" +    
+    		"Elba Elma," +    
     		"Fady Tarek," +
     		"Fareh waryaa," +
     		"Fozi Ali," +
-    		"Ghazi Gomez,";
+    		"Ghazi Gomez," +
+    		"Hamit Altintop";
+    private ArrayList <Player> players;
     
-    // Inputting the players to the ArrayList to be easily accessed
     public PlayerDatabase(){
         StringTokenizer playersST = new StringTokenizer(playersList, ",");
         players = new ArrayList<Player>();
@@ -27,22 +26,21 @@ public class PlayerDatabase {
         }
     }
     
-    // Distributing some of the players in the database to create a team
-    public Player[] getTeam(int numberOfPlayers) throws Exception {
+    public Player[] getTeam(int numberOfPlayers) {
         Player[] teamPlayers = new Player[numberOfPlayers];
+        
         for (int i = 0; i < numberOfPlayers; i++){
             int playerIndex = (int) (Math.random() * players.size());
             
             try {
-            			teamPlayers[i] = players.get(playerIndex);
-            			players.remove(playerIndex);
+            teamPlayers[i] = players.get(playerIndex);
+            players.remove(playerIndex);
             }
             catch(IndexOutOfBoundsException ie){
-            			throw new Exception("Not enough players in the database for the teams requested.");
+            	ie.printStackTrace(System.err);
             }
-            
         }
         
-        return teamPlayers;  
-    }
+        return teamPlayers;   
+    }  
 }
