@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 public abstract class TeamGameEvent {
 	// Abstract Methods
 	public abstract TeamGameEvent[] getNextEvents();

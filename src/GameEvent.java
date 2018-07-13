@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 public abstract class GameEvent {
     // To be Implemented by the events
     public abstract GameEvent[] getNextEvents();

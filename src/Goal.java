@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 public class Goal extends GameEvent {
     
     public Goal() {}

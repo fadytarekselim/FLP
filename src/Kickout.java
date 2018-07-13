@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 public class Kickout extends GameEvent {
     
     public Kickout() {}

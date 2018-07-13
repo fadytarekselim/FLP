@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 public class Dribble extends GameEvent {
     
     // At the simplest, if it is a successful dribble, it moves towards the other teams goal

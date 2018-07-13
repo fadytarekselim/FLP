@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 public class Settings {
     public static final double GAME_EVENT_FREQUENCY = 0.6;
     public static final int GAME_LENGTH = 90;
