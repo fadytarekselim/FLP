@@ -1,3 +1,8 @@
+/* Author: Fady Tarek Selim
+ * Developer? Insert your name here:
+ * 1- 
+ * */
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTable;
